@@ -1,0 +1,250 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:icons: font
+:source-highlighter: pygments
+:pygments-style: emacs
+
+
+= Web Application Development with Python(Flask) Workshop 
+
+
+== Week 0: Python Environment Setup 
+
+- Install Python
+- Install VS Code
+- Python Virtual Environmnet (pip,pipenv) * for mac use brew
+- Git/Github 
+- Download git from https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+
+== Git Basics
+
+[source,bash]
+----
+git --verison
+git init #initialize git
+git status # status of the project
+git add <file-name> # Add a single file
+git add . # add all files
+git commit -m " Message " # commit git
+git push # push to your repository's main branch
+git push -u origin <branch-name>
+git branch <branch-name>
+----
+
+== Week 1: Python Language Refresher
+ - PEP8 Naming Conventions
+ - *List*
+ - *Tuple*
+ - *Sets*
+ - *Dict*
+ - *Functions*
+ - *Classes*
+ - *Standard Libraries*
+ - Generators
+ - Context Managers
+ - *Decorators*
+
+=== PEP8 Naming Conventions
+==== What is PEP 8?
+- PEP: A Python Enhancement Proposal
+- PEP 8: A set of style guidelines for Python
+    - Widely used
+    - https://www.python.org/dev/peps/pep-0008/
+
+==== Why follow PEP 8?
+- Readable code
+    - Mostly for yourself (and other developers)
+
+- User-friendly code
+    - Following naming conventions is a way to document your code
+    - Mostly useful for users (which can be developers too)
+===== regular_variables
+Variable names should be lowercase, where necessary separating words by underscores
+[source,python]
+----
+first_name = 'Jaamac'
+----
+
+===== CONSTANTS
+In Python, all variables can be modified therefore, real constants don't exist But to indicate that a variable should be treated as if it were a _constant_, names should be uppercase, where necessary separating words by underscores
+[source,python]
+----
+PI = 3.1415 # Constant variable
+SERVER_NAME = 'server'
+----
+===== function_names()
+Names of functions and class methods should be lowercase, where necessary separating words by underscores
+
+[source,python]
+----
+def add_two_numbers(num1,num2):
+    return num1+num2
+----
+
+===== ClassNames
+Class names should capitalize the first letter of each word
+
+[source,python]
+----
+class MyServer:
+
+    def __init__(self,name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+----
+
+===== conflicting_names_
+If a name is already taken, suffix an underscore
+[source,python]
+----
+list_ = [12,34,6]
+----
+
+==== The most important naming conventions
+
+==== regular_variables
+Variable names should be *lowercase*, where necessary separating words by underscores
+
+=== Generators
+
+Generators have been an important part of Python ever since they were introduced with PEP 255.
+
+Generator functions allow you to declare a function that behaves like an iterator.
+
+They allow programmers to make an iterator in a fast, easy, and clean way.
+
+What’s an iterator, you may ask?
+
+An iterator is an object that can be iterated (looped) upon. It is used to abstract a container of data to make it behave like an iterable object. You probably already use a few iterable objects every day: strings, lists, and dictionaries to name a few.
+
+An iterator is defined by a class that implements the Iterator Protocol. This protocol looks for two methods within the class: __iter__ and __next__.
+
+Whoa, step back. Why would you even want to make iterators?
+
+Saving memory space
+Iterators don’t compute the value of each item when instantiated. They only compute it when you ask for it. This is known as lazy evaluation.
+
+Lazy evaluation is useful when you have a very large data set to compute. It allows you to start using the data immediately, while the whole data set is being computed.
+
+Let’s say we want to get all the even numbers that are smaller than a maximum number.
+
+We first define the function that checks if a number is even:
+
+[source,python]
+----
+def ma_dhabanbaa(lambar):
+    if lambar % 2 == 0:
+        return True
+    return False
+
+
+for i in range(100):
+    if ma_dhabanbaa(i):
+        print(i)
+----
+
+
+== Week 2: Build Web apps with Flask: Part1
+
+- Introduction to Flask
+- Creating simple flask app
+- Creating flask templates
+- Creating summary model
+- Adding values through REPL
+- Displaying summaries in the frontend
+
+=== Introduction to Flask
+
+Flask is a *micro web framework* written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.
+
+Flask depends on the Jinja template engine and the Werkzeug WSGI toolkit.
+
+== What is Werkzeug?
+
+
+== Dhambaal App Structure
+
+[source,bash]
+----
+DHAMBAAL
+├── Pipfile
+├── Pipfile.lock
+├── README.adoc
+├── README.pdf
+├── Resources
+│   ├── app.js
+│   ├── app.py
+│   ├── classes_1.py
+│   ├── classes_2.py
+│   ├── decorator.py
+│   ├── dict.py
+│   ├── functions_1.py
+│   ├── generator_1.py
+│   ├── lists.py
+│   ├── project_homework.py
+│   ├── sample.py
+│   ├── set_1.py
+│   └── tuple_1.py
+├── app.py
+└── dhambaal
+    ├── __init__.py
+    ├── static
+    │   ├── css
+    │   ├── images
+    │   └── js
+    └── templates
+        └── index.html
+----
+
+
+
+== Week 3: Build Web apps with Flask: Part2
+
+- Flask Forms
+- Forms for summary Model
+- Form Validations
+
+== Week 4:Build Web apps with Flask: Part3(Theming)
+
+- CSS Frontend Framworks 
+- Custom CSS
+- Navbar and Logo
+
+== Week 5:Build Web apps with Flask: Part4(User Authentication)
+
+TIP: Flask-login, Flask-Bcrypt,Flask-Migrate
+
+- Creating User Model
+- Creating Users Form
+- User routes & templates
+
+== Week 6: Build Web apps with Flask
+
+- Creating Categories Model,view and tempalte
+- Integrating categories with summaries
+- Filtering Summaries by category
+
+== Week7: App restructuring 
+- Introducing Flask Blueprints
+
+== Week8: Creating Tests
+
+== Week9: Creating Multiple Environment (Development,Testing,Production)
+
+== Week10: Automated Deployment With Docker, Travis-CI,Git/Github 
+
+
+
+
+
+
+
+
