@@ -1,5 +1,5 @@
 from dhambaal import app
 
-app.run(port=5000)
+app.run()
 
-print(app.config)
+# print(app.config)

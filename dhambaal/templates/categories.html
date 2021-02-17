@@ -1,0 +1,16 @@
+{%extends 'base.html' %}
+<!--dhambaal - Home -->
+{%block title %}
+Create catagories
+{%endblock %}
+{%block content %}
+    <form method="POST">
+        <label>Name</label>
+        <input type="text" name="name"/><br/>
+        <label>description</label>
+        <input type="text" name="description"/><br/>
+        <button type="submit">post</button>
+
+    </form>
+
+{%endblock content %}
