@@ -1,7 +1,7 @@
 from flask import render_template, request,redirect 
 from dhambaal import app
 from dhambaal.models.Post import Post
-from dhambaal.models.Post import Categories
+from dhambaal.models.categories import Category
 
 
 @app.route("/",methods=['GET','POST'])
@@ -28,17 +28,18 @@ def creat_post():
 
     return render_template("post_form.html")
 
-@app.route("/categories",methods=['GET','POST'])
+@app.route("/category",methods=['GET','POST'])
 def creat_cat():
     if request.method == "POST":
         name=request.form.get('name')
         description=request.form.get('description')
         #inserting value to the database
-        technology=Categories(name=name,description=description)
-        technology.save_to_db()
+        category=Category(name=name,description=description)
+        category.save_to_db()
+        
         return redirect("/")
 
-    return render_template("categories.html")
+    return render_template("category_form.html")
 
 
 
