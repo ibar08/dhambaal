@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
  {% block content %}
 {%from "macros.html" import section_heading %}
-{{section_heading(title="Categories", link="admin.create_category", btn_text="Create category")}}
+{{section_heading(title="Categories", link="dashboard.create_category", btn_text="Create category")}}
 <table class="table box">
   <thead>
     <tr>
@@ -20,7 +20,7 @@
       </td>
       <td>{{category.description}}</td>
       <td>{{category.date}}</td>
-      <td><a>Delete</a> | <a>Edit</a></td>
+      <td><a href="{{ url_for('dashboard.delete_category',id=category.id) }}">Delete</a> | <a href="{{ url_for('dashboard.update_category',id=category.id) }}">Edit</a></td>
     </tr>
     {%endfor%}
     </tbody>
