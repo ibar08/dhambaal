@@ -1,15 +1,11 @@
 {%extends 'base.html' %}
-<!--dhambaal - Home -->
-{%block title %}
-Home
-{%endblock %}
-{%block content %}
-    <h1>Flask Web Development Course</h1>
-    {%for post in posts%}
-        <h4>{{post.title}}</h4>
-        <p>{{post.description}}</p>
-        <p>{{post.source}}</p>
-        <p>{{post.create_at}}</p>
-    {%endfor%}
-
-{%endblock content %}
+<!-- Dhambaal - Home -->
+{%block title%} Home {%endblock title%} {%block content%}
+<h1>Flask Web Development Course</h1>
+{%for post in posts%} {%if post.published == 'yes'%}
+<h4>{{post.title}}</h4>
+<p>{{post.id}}</p>
+<p>{{post.description}}</p>
+<p>{{post.source}}</p>
+<p>{{post.create_at}}</p>
+{%endif%} {%endfor%} {%endblock content%}

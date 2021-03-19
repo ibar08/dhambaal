@@ -1,5 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+from flask_migrate import Migrate
+#from flask_login import LoginManager
 
 
 app = Flask(__name__)
@@ -7,7 +9,8 @@ app.config['SECRET_KEY'] = "thisisverysecure"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dhambaal.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
+# login_manager = LoginManager(app)
+migrate = Migrate(app, db)
 
 # Create Tables before running application
 @app.before_first_request
