@@ -34,3 +34,7 @@
   display: flex;
   align-items: center;
 }
+
+.login-side-left{
+  height: 93vh;
+}
