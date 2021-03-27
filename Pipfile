@@ -17,6 +17,7 @@ itsdangerous = "*"
 wtforms = "*"
 flask-login = "*"
 email-validator = "*"
+flask-bcrypt = "*"
 
 [dev-packages]
 
