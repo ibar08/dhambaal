@@ -18,6 +18,7 @@ wtforms = "*"
 flask-login = "*"
 email-validator = "*"
 flask-bcrypt = "*"
+flask-mail = "*"
 
 [dev-packages]
 

@@ -37,4 +37,19 @@
 
 .login-side-left{
   height: 93vh;
+  
+}
+form{
+  margin-top: 2rem;
+}
+
+.auth-header{
+  margin-top: 4rem;
+}
+.has-background-primary{
+  background: rgb(28, 6,80)!important ;
+}
+.forget-password{
+  display:flex;
+  justify-content: space-between;
 }
